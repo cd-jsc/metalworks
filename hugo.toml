@@ -1,7 +1,11 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://cd-jsc.github.io/metalworks/'
 languageCode = 'en-us'
 title = 'Custom Strut & Manufacturing'
 theme = 'portfolio'
+
+# GitHub Pages specific settings
+canonifyURLs = true
+relativeURLs = false
 
 [params]
   description = "Superior custom roll forming and manufacturing solutions"
