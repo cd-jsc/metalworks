@@ -1,0 +1,32 @@
+{{ define "main" }}
+<section class="hero" style="padding: 4rem 0;">
+    <div class="container">
+        <h1>{{ .Title }}</h1>
+        {{ if .Description }}
+        <p>{{ .Description }}</p>
+        {{ end }}
+    </div>
+</section>
+
+<section style="padding: 3rem 0;">
+    <div class="container">
+        <div class="content">
+            {{ .Content }}
+            
+            {{ if .Pages }}
+            <div class="page-list">
+                {{ range .Pages }}
+                <article style="margin-bottom: 2rem; padding: 1.5rem; background: #f8f9fa; border-radius: 8px;">
+                    <h3><a href="{{ .Permalink }}" style="color: #2c3e50; text-decoration: none;">{{ .Title }}</a></h3>
+                    <p style="color: #7f8c8d; margin: 0.5rem 0;">{{ .Date.Format "January 2, 2006" }}</p>
+                    {{ if .Summary }}
+                    <p>{{ .Summary }}</p>
+                    {{ end }}
+                </article>
+                {{ end }}
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}

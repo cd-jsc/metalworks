@@ -1,0 +1,33 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Custom Strut & Manufacturing'
+theme = 'portfolio'
+
+[params]
+  description = "Superior custom roll forming and manufacturing solutions"
+  company = "Custom Strut & Manufacturing"
+  phone = "(800) 345-2069"
+  email = "contact@customstrut.com"
+  address = "123 Industrial Blvd, Manufacturing District"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Work"
+    url = "/work/"
+    weight = 2
+  [[menu.main]]
+    name = "Services"
+    url = "/services/"
+    weight = 3
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 4
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 5
