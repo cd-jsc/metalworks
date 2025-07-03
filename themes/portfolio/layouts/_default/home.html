@@ -1,0 +1,211 @@
+{{ define "main" }}
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <h1>Superior Custom Manufacturing</h1>
+        <p>We provide custom length channel strut and roll forming solutions for the most demanding industrial applications. Excellence in every project.</p>
+        <a href="/work/" class="cta-button">View Our Work</a>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="services" id="services">
+    <div class="container">
+        <div class="section-title">
+            <h2>What We Do</h2>
+            <p>Comprehensive manufacturing solutions designed to meet your exact specifications and exceed industry standards.</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-industry"></i>
+                <h3>Custom Roll Forming</h3>
+                <p>Our 20 pass line is capable of running complex, multi-bend shapes with tolerances as tight as +/- 1/32″ for high precision manufacturing.</p>
+            </div>
+            
+            <div class="service-card">
+                <i class="fas fa-ruler-combined"></i>
+                <h3>Custom Channel Strut</h3>
+                <p>Manufacture most common commercially available channel strut at custom lengths to improve efficiency and reduce material waste.</p>
+            </div>
+            
+            <div class="service-card">
+                <i class="fas fa-solar-panel"></i>
+                <h3>Solar Racking Solutions</h3>
+                <p>Specialized racking materials including channel strut, U-channel, and angle iron for large-scale solar installations.</p>
+            </div>
+            
+            <div class="service-card">
+                <i class="fas fa-cogs"></i>
+                <h3>Precision Engineering</h3>
+                <p>High-speed, high-tolerance manufacturing with material gauges ranging from 12 gauge to 20 gauge steel.</p>
+            </div>
+            
+            <div class="service-card">
+                <i class="fas fa-recycle"></i>
+                <h3>Material Optimization</h3>
+                <p>Coil end welding system minimizes scrap and maximizes material utilization for cost-effective production.</p>
+            </div>
+            
+            <div class="service-card">
+                <i class="fas fa-tools"></i>
+                <h3>Post Processing</h3>
+                <p>Punching and cutting parts post roll form to eliminate production defects and maintain tight tolerances.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio Preview -->
+<section class="portfolio" id="portfolio">
+    <div class="container">
+        <div class="section-title">
+            <h2>Recent Projects</h2>
+            <p>Showcasing our expertise across diverse industries and applications.</p>
+        </div>
+        
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <div class="portfolio-image">
+                    100MW Solar Farm Project
+                </div>
+                <div class="portfolio-content">
+                    <h3>Large-Scale Solar Installation</h3>
+                    <p>Custom racking solutions for a 100MW solar farm including specialized channel strut and mounting hardware.</p>
+                    <div class="portfolio-meta">
+                        <span class="meta-item">Client: Renewable Energy Corp</span>
+                        <span class="meta-item">Completed: 2024</span>
+                    </div>
+                    <div class="portfolio-tags">
+                        <span class="tag">Solar</span>
+                        <span class="tag">Custom Strut</span>
+                        <span class="tag">Large Scale</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="portfolio-item">
+                <div class="portfolio-image">
+                    Industrial Complex Framework
+                </div>
+                <div class="portfolio-content">
+                    <h3>Manufacturing Facility Support</h3>
+                    <p>Precision roll-formed structural components for a major automotive manufacturing facility expansion.</p>
+                    <div class="portfolio-meta">
+                        <span class="meta-item">Client: AutoManufacturing Inc</span>
+                        <span class="meta-item">Completed: 2024</span>
+                    </div>
+                    <div class="portfolio-tags">
+                        <span class="tag">Industrial</span>
+                        <span class="tag">Roll Forming</span>
+                        <span class="tag">Automotive</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="portfolio-item">
+                <div class="portfolio-image">
+                    Commercial Building Project
+                </div>
+                <div class="portfolio-content">
+                    <h3>Commercial Infrastructure</h3>
+                    <p>Custom channel strut and support systems for a multi-story commercial building HVAC installation.</p>
+                    <div class="portfolio-meta">
+                        <span class="meta-item">Client: Metro Construction</span>
+                        <span class="meta-item">Completed: 2023</span>
+                    </div>
+                    <div class="portfolio-tags">
+                        <span class="tag">Commercial</span>
+                        <span class="tag">HVAC</span>
+                        <span class="tag">Support Systems</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="/work/" class="cta-button">View All Projects</a>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>500+</h3>
+                <p>Projects Completed</p>
+            </div>
+            <div class="stat-item">
+                <h3>15</h3>
+                <p>Years Experience</p>
+            </div>
+            <div class="stat-item">
+                <h3>50+</h3>
+                <p>Industrial Clients</p>
+            </div>
+            <div class="stat-item">
+                <h3>99.8%</h3>
+                <p>Quality Rating</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="section-title">
+            <h2>Get In Touch</h2>
+            <p>Ready to discuss your next project? Contact us for a consultation and quote.</p>
+        </div>
+        
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>{{ .Site.Params.phone }}</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>{{ .Site.Params.email }}</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>{{ .Site.Params.address }}</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Monday - Friday: 8:00 AM - 6:00 PM</span>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Project Details *</label>
+                        <textarea id="message" name="message" placeholder="Tell us about your project requirements..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ end }}

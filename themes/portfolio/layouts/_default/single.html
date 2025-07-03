@@ -1,0 +1,97 @@
+{{ define "main" }}
+<section class="hero" style="padding: 4rem 0;">
+    <div class="container">
+        <h1>{{ .Title }}</h1>
+        {{ if .Description }}
+        <p>{{ .Description }}</p>
+        {{ end }}
+    </div>
+</section>
+
+<section style="padding: 3rem 0;">
+    <div class="container">
+        <div class="content">
+            {{ .Content }}
+        </div>
+    </div>
+</section>
+
+<style>
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.content h1, .content h2, .content h3, .content h4 {
+    color: #2c3e50;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.content h1 {
+    font-size: 2.5rem;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 0.5rem;
+}
+
+.content h2 {
+    font-size: 2rem;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 0.3rem;
+}
+
+.content h3 {
+    font-size: 1.5rem;
+}
+
+.content h4 {
+    font-size: 1.2rem;
+}
+
+.content p {
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.content ul, .content ol {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+}
+
+.content li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.content strong {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.content code {
+    background-color: #f8f9fa;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+}
+
+.content blockquote {
+    border-left: 4px solid #3498db;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: #7f8c8d;
+}
+
+@media (max-width: 768px) {
+    .content h1 {
+        font-size: 2rem;
+    }
+    
+    .content h2 {
+        font-size: 1.7rem;
+    }
+}
+</style>
+{{ end }}
