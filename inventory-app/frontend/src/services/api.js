@@ -41,14 +41,35 @@ export const endpoints = {
   categories: '/categories/',
   categorySelectOptions: '/categories/select_options/',
   
+  // Tags
+  tags: '/tags/',
+  tagSelectOptions: '/tags/select_options/',
+  
   // Suppliers
   suppliers: '/suppliers/',
   supplierSelectOptions: '/suppliers/select_options/',
+  
+  // Warehouses
+  warehouses: '/warehouses/',
+  warehouseSelectOptions: '/warehouses/select_options/',
+  warehouseStockSummary: (id) => `/warehouses/${id}/stock_summary/`,
   
   // Locations
   locations: '/locations/',
   locationSelectOptions: '/locations/select_options/',
   locationStockSummary: (id) => `/locations/${id}/stock_summary/`,
+  
+  // Bin Locations
+  binLocations: '/bin-locations/',
+  binLocationSelectOptions: '/bin-locations/select_options/',
+  
+  // Product Templates
+  productTemplates: '/product-templates/',
+  productTemplateSelectOptions: '/product-templates/select_options/',
+  
+  // Product Variants
+  productVariants: '/product-variants/',
+  productVariantSelectOptions: '/product-variants/select_options/',
   
   // Items
   items: '/items/',
@@ -56,6 +77,15 @@ export const endpoints = {
   itemsLowStock: '/items/low_stock/',
   itemStockHistory: (id) => `/items/${id}/stock_history/`,
   itemAdjustStock: (id) => `/items/${id}/adjust_stock/`,
+  itemGenerateBarcode: (id) => `/items/${id}/generate_barcode/`,
+  
+  // Barcodes
+  barcodes: '/barcodes/',
+  barcodeLookupItem: '/barcodes/lookup_item/',
+  
+  // Labels
+  labels: '/labels/',
+  labelPrint: (id) => `/labels/${id}/print_label/`,
   
   // Batches
   batches: '/batches/',
@@ -114,6 +144,15 @@ export const categoryAPI = {
   selectOptions: () => apiService.get(endpoints.categorySelectOptions),
 };
 
+export const tagAPI = {
+  list: (params) => apiService.get(endpoints.tags, params),
+  create: (data) => apiService.post(endpoints.tags, data),
+  get: (id) => apiService.get(`${endpoints.tags}${id}/`),
+  update: (id, data) => apiService.put(`${endpoints.tags}${id}/`, data),
+  delete: (id) => apiService.delete(`${endpoints.tags}${id}/`),
+  selectOptions: () => apiService.get(endpoints.tagSelectOptions),
+};
+
 export const supplierAPI = {
   list: (params) => apiService.get(endpoints.suppliers, params),
   create: (data) => apiService.post(endpoints.suppliers, data),
@@ -121,6 +160,16 @@ export const supplierAPI = {
   update: (id, data) => apiService.put(`${endpoints.suppliers}${id}/`, data),
   delete: (id) => apiService.delete(`${endpoints.suppliers}${id}/`),
   selectOptions: () => apiService.get(endpoints.supplierSelectOptions),
+};
+
+export const warehouseAPI = {
+  list: (params) => apiService.get(endpoints.warehouses, params),
+  create: (data) => apiService.post(endpoints.warehouses, data),
+  get: (id) => apiService.get(`${endpoints.warehouses}${id}/`),
+  update: (id, data) => apiService.put(`${endpoints.warehouses}${id}/`, data),
+  delete: (id) => apiService.delete(`${endpoints.warehouses}${id}/`),
+  selectOptions: () => apiService.get(endpoints.warehouseSelectOptions),
+  stockSummary: (id) => apiService.get(endpoints.warehouseStockSummary(id)),
 };
 
 export const locationAPI = {
@@ -133,6 +182,33 @@ export const locationAPI = {
   stockSummary: (id) => apiService.get(endpoints.locationStockSummary(id)),
 };
 
+export const binLocationAPI = {
+  list: (params) => apiService.get(endpoints.binLocations, params),
+  create: (data) => apiService.post(endpoints.binLocations, data),
+  get: (id) => apiService.get(`${endpoints.binLocations}${id}/`),
+  update: (id, data) => apiService.put(`${endpoints.binLocations}${id}/`, data),
+  delete: (id) => apiService.delete(`${endpoints.binLocations}${id}/`),
+  selectOptions: () => apiService.get(endpoints.binLocationSelectOptions),
+};
+
+export const productTemplateAPI = {
+  list: (params) => apiService.get(endpoints.productTemplates, params),
+  create: (data) => apiService.post(endpoints.productTemplates, data),
+  get: (id) => apiService.get(`${endpoints.productTemplates}${id}/`),
+  update: (id, data) => apiService.put(`${endpoints.productTemplates}${id}/`, data),
+  delete: (id) => apiService.delete(`${endpoints.productTemplates}${id}/`),
+  selectOptions: () => apiService.get(endpoints.productTemplateSelectOptions),
+};
+
+export const productVariantAPI = {
+  list: (params) => apiService.get(endpoints.productVariants, params),
+  create: (data) => apiService.post(endpoints.productVariants, data),
+  get: (id) => apiService.get(`${endpoints.productVariants}${id}/`),
+  update: (id, data) => apiService.put(`${endpoints.productVariants}${id}/`, data),
+  delete: (id) => apiService.delete(`${endpoints.productVariants}${id}/`),
+  selectOptions: () => apiService.get(endpoints.productVariantSelectOptions),
+};
+
 export const itemAPI = {
   list: (params) => apiService.get(endpoints.items, params),
   create: (data) => apiService.post(endpoints.items, data),
@@ -143,6 +219,25 @@ export const itemAPI = {
   lowStock: () => apiService.get(endpoints.itemsLowStock),
   stockHistory: (id) => apiService.get(endpoints.itemStockHistory(id)),
   adjustStock: (id, data) => apiService.post(endpoints.itemAdjustStock(id), data),
+  generateBarcode: (id, data) => apiService.post(endpoints.itemGenerateBarcode(id), data),
+};
+
+export const barcodeAPI = {
+  list: (params) => apiService.get(endpoints.barcodes, params),
+  create: (data) => apiService.post(endpoints.barcodes, data),
+  get: (id) => apiService.get(`${endpoints.barcodes}${id}/`),
+  update: (id, data) => apiService.put(`${endpoints.barcodes}${id}/`, data),
+  delete: (id) => apiService.delete(`${endpoints.barcodes}${id}/`),
+  lookupItem: (data) => apiService.post(endpoints.barcodeLookupItem, data),
+};
+
+export const labelAPI = {
+  list: (params) => apiService.get(endpoints.labels, params),
+  create: (data) => apiService.post(endpoints.labels, data),
+  get: (id) => apiService.get(`${endpoints.labels}${id}/`),
+  update: (id, data) => apiService.put(`${endpoints.labels}${id}/`, data),
+  delete: (id) => apiService.delete(`${endpoints.labels}${id}/`),
+  print: (id, data) => apiService.post(endpoints.labelPrint(id), data),
 };
 
 export const batchAPI = {
