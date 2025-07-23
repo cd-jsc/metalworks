@@ -82,21 +82,33 @@ A comprehensive full-stack inventory management application built with Django RE
    cd inventory-app
    ```
 
-2. **Start the application**
+2. **Quick Setup with Helper Scripts** (Recommended)
    ```bash
+   # Complete setup with database and dummy data
+   chmod +x scripts/setup.sh
+   ./scripts/setup.sh
+   ```
+   
+   This will automatically:
+   - Set up the PostgreSQL database with migrations
+   - Create an admin superuser (username: `admin`, password: `admin123`)
+   - Generate comprehensive dummy data
+   - Start all services
+
+3. **Manual Setup** (Alternative)
+   ```bash
+   # Start services manually
    docker-compose up --build
+   
+   # In another terminal, create superuser
+   docker-compose exec backend python manage.py createsuperuser
    ```
 
-3. **Access the application**
+4. **Access the application**
    - **Frontend**: http://localhost:3000
    - **Backend API**: http://localhost:8000/api
    - **API Documentation**: http://localhost:8000/api/docs/
    - **Django Admin**: http://localhost:8000/admin
-
-4. **Create a superuser** (optional)
-   ```bash
-   docker-compose exec backend python manage.py createsuperuser
-   ```
 
 The application will automatically:
 - Set up the PostgreSQL database
@@ -317,6 +329,33 @@ The application uses PostgreSQL with the following default settings:
      "barcode_data": "1234567890123"
    }
    ```
+
+## 🛠️ Helper Scripts
+
+The project includes comprehensive setup scripts to get you started quickly:
+
+### Available Scripts
+- **`scripts/setup.sh`** - Complete setup (database + dummy data + services)
+- **`scripts/setup_database.py`** - Database setup and admin user creation
+- **`scripts/generate_dummy_data.py`** - Generate realistic sample data
+- **`scripts/setup_complete.py`** - Combined database setup and data generation
+
+### Quick Commands
+```bash
+# Complete setup (recommended for first-time setup)
+./scripts/setup.sh
+
+# Database setup only
+./scripts/setup.sh db-only
+
+# Generate dummy data only
+./scripts/setup.sh data-only
+
+# Get help
+./scripts/setup.sh help
+```
+
+For detailed information about the scripts and generated data, see [scripts/README.md](scripts/README.md).
 
 ## 🧪 Development
 
